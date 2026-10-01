@@ -53,3 +53,5 @@ node_modules/
 # local scratch and service-account keys
 /temp/
 *adminsdk*.json
+
+.vercel
