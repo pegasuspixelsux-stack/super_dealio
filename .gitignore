@@ -49,3 +49,7 @@ node_modules/
 /playwright/.auth/
 
 !.env.example
+
+# local scratch and service-account keys
+/temp/
+*adminsdk*.json
