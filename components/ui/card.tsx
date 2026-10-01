@@ -5,7 +5,7 @@ export function Card({ className, ...props }: HTMLAttributes<HTMLDivElement>) {
   return (
     <div
       className={cn(
-        "rounded-2xl border border-slate-800/80 bg-slate-900/40 shadow-[0_1px_0_0_rgb(255_255_255/0.04)_inset,0_8px_24px_-12px_rgb(0_0_0/0.5)]",
+        "rounded-2xl border border-slate-800/80 bg-surface shadow-sm dark:shadow-[0_1px_0_0_rgb(255_255_255/0.04)_inset,0_8px_24px_-12px_rgb(0_0_0/0.5)]",
         className,
       )}
       {...props}
@@ -36,11 +36,11 @@ export function CardHeader({
 type Tone = "neutral" | "green" | "amber" | "blue" | "red";
 
 const tones: Record<Tone, string> = {
-  neutral: "border-slate-700/80 bg-white/5 text-slate-300",
-  green: "border-emerald-500/20 bg-emerald-500/10 text-emerald-300",
-  amber: "border-amber-500/20 bg-amber-500/10 text-amber-300",
-  blue: "border-sky-500/20 bg-sky-500/10 text-sky-300",
-  red: "border-red-500/20 bg-red-500/10 text-red-300",
+  neutral: "border-slate-700/80 bg-ink/5 text-slate-300",
+  green: "border-emerald-500/20 bg-emerald-500/10 text-emerald-700 dark:text-emerald-300",
+  amber: "border-amber-500/20 bg-amber-500/10 text-amber-700 dark:text-amber-300",
+  blue: "border-sky-500/20 bg-sky-500/10 text-sky-700 dark:text-sky-300",
+  red: "border-red-500/20 bg-red-500/10 text-red-700 dark:text-red-300",
 };
 
 export function Badge({

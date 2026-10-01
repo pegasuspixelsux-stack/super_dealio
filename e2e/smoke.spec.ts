@@ -26,3 +26,14 @@ test("dashboard redirects unauthenticated visitors to login", async ({ page }) =
   await page.goto("/dashboard");
   await expect(page).toHaveURL(/\/login$/);
 });
+
+test("footer theme switch toggles light/dark and persists", async ({ page }) => {
+  await page.goto("/");
+  const html = page.locator("html");
+  await page.getByRole("radio", { name: "Light" }).click();
+  await expect(html).not.toHaveClass(/dark/);
+  await page.reload();
+  await expect(html).not.toHaveClass(/dark/);
+  await page.getByRole("radio", { name: "Dark" }).click();
+  await expect(html).toHaveClass(/dark/);
+});

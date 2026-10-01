@@ -31,20 +31,20 @@ export function ListingGrid({
       </div>
 
       {loading ? (
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {Array.from({ length: 6 }, (_, index) => (
             <div
               key={index}
-              className="h-96 animate-pulse rounded-2xl border border-slate-800/80 bg-slate-900/40"
+              className="h-96 animate-pulse rounded-2xl border border-slate-800/80 bg-surface"
             />
           ))}
         </div>
       ) : cars.length === 0 ? (
-        <p className="rounded-2xl border border-slate-800/80 bg-slate-900/40 px-6 py-16 text-center text-slate-500">
+        <p className="rounded-2xl border border-slate-800/80 bg-surface px-6 py-16 text-center text-slate-500">
           No vehicles match your search. Try adjusting the filters.
         </p>
       ) : (
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {cars.map((car) => (
               <DealCard key={car.id} car={car} currency={currency} onInquire={onInquire} />
             ))}

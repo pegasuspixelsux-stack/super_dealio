@@ -32,7 +32,7 @@ export function Navbar() {
             <Link
               key={category.label}
               href={category.href}
-              className="rounded-lg px-3 py-2 text-sm font-medium text-slate-400 transition-colors duration-200 hover:bg-white/5 hover:text-slate-100"
+              className="rounded-lg px-3 py-2 text-sm font-medium text-slate-400 transition-colors duration-200 hover:bg-ink/5 hover:text-slate-100"
             >
               {category.label}
             </Link>
@@ -46,7 +46,7 @@ export function Navbar() {
             aria-label="Search vehicles"
             className={cn(
               "rounded-xl p-2.5 text-slate-400 transition-[background-color,color,transform] duration-200",
-              "hover:bg-white/5 hover:text-slate-100 active:scale-[0.95]",
+              "hover:bg-ink/5 hover:text-slate-100 active:scale-[0.95]",
             )}
           >
             <Search className="size-5" />

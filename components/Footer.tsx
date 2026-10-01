@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 const columns = [
   {
@@ -58,8 +59,13 @@ export function Footer() {
           </div>
         ))}
       </div>
-      <div className="border-t border-slate-800/80 px-6 py-6 text-center text-xs text-slate-500">
-        © {new Date().getFullYear()} SuperDealio. All rights reserved.
+      <div className="border-t border-slate-800/80">
+        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-6 py-6 sm:flex-row">
+          <p className="text-xs text-slate-500">
+            © {new Date().getFullYear()} SuperDealio. All rights reserved.
+          </p>
+          <ThemeToggle />
+        </div>
       </div>
     </footer>
   );

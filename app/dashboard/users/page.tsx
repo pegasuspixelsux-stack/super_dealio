@@ -42,7 +42,7 @@ export default function UsersPage() {
       />
 
       {(error || actionError) && (
-        <p role="alert" className="mb-6 text-sm text-red-400">
+        <p role="alert" className="mb-6 text-sm text-red-700 dark:text-red-400">
           {error || actionError}
         </p>
       )}

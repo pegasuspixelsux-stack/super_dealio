@@ -54,7 +54,7 @@ export function InquiryModal({ car, onClose }: { car: Car | null; onClose: () =>
     >
       {sent ? (
         <div className="flex flex-col items-center gap-4 py-8 text-center">
-          <div className="flex size-14 items-center justify-center rounded-full bg-emerald-500/10 text-emerald-400">
+          <div className="flex size-14 items-center justify-center rounded-full bg-emerald-500/10 text-emerald-700 dark:text-emerald-400">
             <Check className="size-7" />
           </div>
           <p className="text-lg font-semibold">Thanks, we&apos;ll be in touch shortly.</p>
@@ -78,7 +78,7 @@ export function InquiryModal({ car, onClose }: { car: Car | null; onClose: () =>
           <Field label="Message">
             <Textarea name="message" placeholder="I'd like to schedule a test drive." />
           </Field>
-          {error && <p className="text-sm text-red-400">{error}</p>}
+          {error && <p className="text-sm text-red-700 dark:text-red-400">{error}</p>}
           <Button type="submit" size="lg" disabled={sending}>
             {sending ? "Sending…" : "Send inquiry"}
           </Button>

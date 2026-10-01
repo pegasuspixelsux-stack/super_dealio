@@ -147,7 +147,7 @@ export function CarForm({ car, onDone }: { car: Car | null; onDone: () => void }
                 type="button"
                 aria-label="Remove photo"
                 onClick={() => setImages((current) => current.filter((_, i) => i !== index))}
-                className="absolute top-1.5 right-1.5 rounded-full bg-slate-950/80 p-1 text-slate-300 backdrop-blur transition-[color,transform] hover:text-white active:scale-90"
+                className="absolute top-1.5 right-1.5 rounded-full bg-slate-950/80 p-1 text-slate-300 backdrop-blur transition-[color,transform] hover:text-slate-50 active:scale-90"
               >
                 <X className="size-3.5" />
               </button>
@@ -185,7 +185,7 @@ export function CarForm({ car, onDone }: { car: Car | null; onDone: () => void }
       />
 
       {error && (
-        <p role="alert" className="text-sm text-red-400">
+        <p role="alert" className="text-sm text-red-700 dark:text-red-400">
           {error}
         </p>
       )}

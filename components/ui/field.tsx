@@ -9,7 +9,7 @@ import { cn } from "@/lib/utils";
 const control =
   "w-full rounded-xl border border-slate-800/80 bg-slate-950/60 px-3.5 text-sm text-slate-100 " +
   "placeholder:text-slate-600 transition-[border-color,box-shadow] duration-200 " +
-  "focus:border-slate-500 focus:outline-none focus:ring-4 focus:ring-white/5 disabled:opacity-50";
+  "focus:border-slate-500 focus:outline-none focus:ring-4 focus:ring-ink/5 disabled:opacity-50";
 
 export function Field({
   label,

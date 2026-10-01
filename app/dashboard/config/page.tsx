@@ -113,9 +113,9 @@ export default function ConfigPage() {
             {status === "saving" ? "Saving…" : "Save changes"}
           </Button>
           <p aria-live="polite" className="text-sm">
-            {status === "saved" && <span className="text-emerald-400">Settings saved.</span>}
+            {status === "saved" && <span className="text-emerald-700 dark:text-emerald-400">Settings saved.</span>}
             {status === "error" && (
-              <span className="text-red-400">Couldn&apos;t save. Check your permissions.</span>
+              <span className="text-red-700 dark:text-red-400">Couldn&apos;t save. Check your permissions.</span>
             )}
           </p>
         </div>

@@ -78,7 +78,7 @@ export default function LeadsPage() {
       />
 
       {(error || actionError) && (
-        <p role="alert" className="mb-6 text-sm text-red-400">
+        <p role="alert" className="mb-6 text-sm text-red-700 dark:text-red-400">
           {error || actionError}
         </p>
       )}
@@ -90,7 +90,7 @@ export default function LeadsPage() {
             <section
               key={status}
               aria-label={title}
-              className="rounded-2xl border border-slate-800/80 bg-slate-900/40 p-4"
+              className="rounded-2xl border border-slate-800/80 bg-surface p-4"
             >
               <header className="flex items-center justify-between px-2 pt-1 pb-4">
                 <h2 className="text-sm font-semibold text-slate-100">{title}</h2>

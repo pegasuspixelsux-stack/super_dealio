@@ -29,9 +29,9 @@ export function DealCard({
       animate={{ opacity: 1, y: 0 }}
       whileHover={{ y: -4 }}
       transition={{ type: "spring", stiffness: 300, damping: 28 }}
-      className="group flex flex-col overflow-hidden rounded-2xl border border-slate-800/80 bg-slate-900/40 transition-colors duration-300 hover:border-slate-700"
+      className="group flex aspect-[1/2] flex-col overflow-hidden rounded-2xl border border-slate-800/80 bg-surface transition-colors duration-300 hover:border-slate-700"
     >
-      <div className="relative aspect-[16/10] overflow-hidden bg-gradient-to-br from-slate-800 to-slate-900">
+      <div className="relative aspect-square shrink-0 overflow-hidden bg-gradient-to-br from-slate-800 to-slate-900">
         {car.images[0] ? (
           // eslint-disable-next-line @next/next/no-img-element
           <img
@@ -53,7 +53,7 @@ export function DealCard({
         </div>
       </div>
 
-      <div className="flex flex-1 flex-col p-6">
+      <div className="flex flex-1 flex-col px-5 pt-5 pb-6">
         <p className="text-sm font-medium text-slate-500">
           {car.year} · {car.bodyType}
         </p>
@@ -65,7 +65,7 @@ export function DealCard({
           {specs.map(({ icon: Icon, label }) => (
             <li
               key={label}
-              className="inline-flex items-center gap-1.5 rounded-full border border-slate-800/80 bg-white/5 px-3 py-1 text-xs text-slate-300"
+              className="inline-flex items-center gap-1.5 rounded-full border border-slate-800/80 bg-ink/5 px-3 py-1 text-xs text-slate-300"
             >
               <Icon className="size-3.5 text-slate-500" />
               {label}

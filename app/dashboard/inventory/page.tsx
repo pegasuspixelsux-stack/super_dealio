@@ -72,7 +72,7 @@ export default function InventoryPage() {
               </thead>
               <tbody className="divide-y divide-slate-800/80">
                 {cars.map((car) => (
-                  <tr key={car.id} className="transition-colors hover:bg-white/[0.02]">
+                  <tr key={car.id} className="transition-colors hover:bg-ink/[0.02]">
                     <td className="px-6 py-4">
                       <div className="flex items-center gap-4">
                         <div className="flex size-14 shrink-0 items-center justify-center overflow-hidden rounded-xl bg-slate-800/60 text-slate-600">
@@ -149,7 +149,7 @@ export default function InventoryPage() {
           {pendingDelete && `${pendingDelete.year} ${pendingDelete.make} ${pendingDelete.model}`} and its
           photos will be permanently removed.
         </p>
-        {deleteError && <p className="mt-4 text-sm text-red-400">{deleteError}</p>}
+        {deleteError && <p className="mt-4 text-sm text-red-700 dark:text-red-400">{deleteError}</p>}
         <div className="mt-6 flex justify-end gap-3">
           <Button variant="ghost" onClick={() => setPendingDelete(null)}>
             Cancel

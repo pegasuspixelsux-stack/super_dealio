@@ -55,7 +55,7 @@ export default function LoginPage() {
     <main className="relative flex flex-1 items-center justify-center px-6 py-16">
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_50%_0%,rgb(51_65_85/0.4),transparent)]"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_50%_0%,color-mix(in_oklab,var(--color-slate-700)_40%,transparent),transparent)]"
       />
       <motion.div
         initial={{ opacity: 0, y: 16 }}
@@ -67,7 +67,7 @@ export default function LoginPage() {
           Super<span className="text-slate-500">Dealio</span>
         </Link>
 
-        <div className="rounded-3xl border border-white/10 bg-slate-900/60 p-8 shadow-2xl backdrop-blur-xl">
+        <div className="rounded-3xl border border-ink/10 bg-slate-900/60 p-8 shadow-2xl backdrop-blur-xl">
           <h1 className="text-2xl font-bold tracking-tight text-slate-100">
             {isLogin ? "Welcome back" : "Create your account"}
           </h1>
@@ -76,7 +76,7 @@ export default function LoginPage() {
           </p>
 
           {!isFirebaseConfigured && (
-            <p className="mt-6 rounded-xl border border-amber-500/20 bg-amber-500/10 px-4 py-3 text-sm text-amber-300">
+            <p className="mt-6 rounded-xl border border-amber-500/20 bg-amber-500/10 px-4 py-3 text-sm text-amber-700 dark:text-amber-300">
               Firebase isn&apos;t configured. Copy <code>.env.example</code> to{" "}
               <code>.env.local</code> and add your project keys.
             </p>
@@ -102,7 +102,7 @@ export default function LoginPage() {
             </Field>
 
             {error && (
-              <p role="alert" className="text-sm text-red-400">
+              <p role="alert" className="text-sm text-red-700 dark:text-red-400">
                 {error}
               </p>
             )}

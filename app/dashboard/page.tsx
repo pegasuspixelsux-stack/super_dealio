@@ -165,7 +165,7 @@ function Change({ value }: { value: number | null }) {
     <p
       className={cn(
         "mt-3 inline-flex items-center gap-1 text-sm font-medium",
-        value === 0 ? "text-slate-500" : up ? "text-emerald-400" : "text-red-400",
+        value === 0 ? "text-slate-500" : up ? "text-emerald-700 dark:text-emerald-400" : "text-red-700 dark:text-red-400",
       )}
     >
       <Icon className="size-4" />
