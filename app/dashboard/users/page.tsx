@@ -10,7 +10,7 @@ import { db } from "@/lib/firebase";
 import { useCollection } from "@/lib/firestore";
 import type { UserProfile, UserRole } from "@/lib/types";
 
-const roles: UserRole[] = ["admin", "manager", "operator"];
+const roles: UserRole[] = ["admin", "manager", "operator", "pending"];
 
 export default function UsersPage() {
   const { user, profile } = useAuth();

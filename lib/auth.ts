@@ -7,22 +7,21 @@ import {
   updateProfile,
   type User,
 } from "firebase/auth";
-import { collection, doc, getDoc, getDocs, limit, query, setDoc } from "firebase/firestore";
+import { doc, getDoc, setDoc } from "firebase/firestore";
 import { auth, db } from "@/lib/firebase";
 
 /**
- * Creates the `users/{uid}` profile on first sign-in. The very first account
- * becomes the admin so the dealership always has someone who can manage roles.
- * Enforce this server-side with Firestore security rules in production.
+ * Creates the `users/{uid}` profile on first sign-in. New accounts are "pending"
+ * and have no dashboard access until an admin approves them (Firestore rules
+ * enforce this; the first admin is made with scripts/make-admin.mjs).
  */
 async function ensureProfile(user: User, displayName?: string) {
   const ref = doc(db, "users", user.uid);
   if ((await getDoc(ref)).exists()) return;
-  const existing = await getDocs(query(collection(db, "users"), limit(1)));
   await setDoc(ref, {
     email: user.email ?? "",
     displayName: displayName || user.displayName || user.email?.split("@")[0] || "Operator",
-    role: existing.empty ? "admin" : "operator",
+    role: "pending",
     createdAt: Date.now(),
   });
 }

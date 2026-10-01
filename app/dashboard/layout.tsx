@@ -42,6 +42,24 @@ export default function DashboardLayout({ children }: { children: ReactNode }) {
     );
   }
 
+  if (profile?.role === "pending") {
+    return (
+      <div className="flex flex-1 flex-col items-center justify-center gap-4 px-6 text-center">
+        <h1 className="text-2xl font-bold tracking-tight">Waiting for approval</h1>
+        <p className="max-w-sm text-slate-400">
+          Your account was created. An admin needs to approve it before you can use the dashboard.
+        </p>
+        <button
+          type="button"
+          onClick={() => void signOut()}
+          className="text-sm font-medium text-slate-100 underline-offset-4 hover:underline"
+        >
+          Sign out
+        </button>
+      </div>
+    );
+  }
+
   const isActive = (href: string) =>
     href === "/dashboard" ? pathname === href : pathname.startsWith(href);
 

@@ -34,7 +34,7 @@ export interface Lead {
   createdAt: number;
 }
 
-export type UserRole = "admin" | "manager" | "operator";
+export type UserRole = "admin" | "manager" | "operator" | "pending";
 
 export interface UserProfile {
   id: string;

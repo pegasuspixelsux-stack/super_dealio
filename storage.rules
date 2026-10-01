@@ -1,0 +1,21 @@
+rules_version = '2';
+
+// Car photos are public to read; only approved staff can upload or delete them.
+service firebase.storage {
+  match /b/{bucket}/o {
+    function isStaff() {
+      return request.auth != null
+          && firestore.exists(/databases/(default)/documents/users/$(request.auth.uid))
+          && firestore.get(/databases/(default)/documents/users/$(request.auth.uid)).data.role
+             in ['admin', 'manager', 'operator'];
+    }
+
+    match /cars/{carId}/{fileName} {
+      allow read: if true;
+      allow write: if isStaff()
+                   && request.resource.size < 10 * 1024 * 1024
+                   && request.resource.contentType.matches('image/.*');
+      allow delete: if isStaff();
+    }
+  }
+}
